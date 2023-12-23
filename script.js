@@ -12,6 +12,7 @@ let initialHour = 0,
   initialMinute = 0,
   initialSecond=0;
   alarmIndex = 0;
+
 //Add zeroes for single digit
 const AddZero = (value) => value < 10 ? "0" + value : value;
 //Search for value in object
@@ -109,7 +110,6 @@ const createAlarm = (alarmObj) => {
   let checkbox = document.createElement("input");
   checkbox.setAttribute("type", "checkbox");
   checkbox.addEventListener("click", (e) => {
-    //console.log("Checkbox clicked");
     if (e.target.checked) {
       startAlarm(e);
     } else {
@@ -125,7 +125,7 @@ const createAlarm = (alarmObj) => {
   deleteButton.addEventListener("click", (e) => deleteAlarm(e));
   alarmDiv.appendChild(deleteButton);
   activeAlarms.appendChild(alarmDiv);
- // console.log("Alarm created:", alarmObj);
+
 };
 
 //Set Alarm
@@ -184,10 +184,7 @@ const deleteAlarm = (e) => {
     
   }
 };
-// const testAlarmButton = document.getElementById('testAlarmButton');
-// testAlarmButton.addEventListener('click', () => {
-//   alarmSound.play();
-// });
+
 window.onload = () => {
   setInterval(displayTimer);
   initialHour = 0;
